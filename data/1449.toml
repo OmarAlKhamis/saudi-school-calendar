@@ -1,0 +1,37 @@
+# Academic year 1449 AH (2027/2028). MoE has published the start and end only so far;
+# breaks are added when the full calendar is announced.
+
+year = 1449
+gregorian = "2027-2028"
+complete = false
+
+[sources]
+moe = "https://www.argaam.com/ar/article/articledetail/id/1833639"  # MoE four-year calendar, 5 Aug 2025
+west-cal = "https://rcjy.edu.sa/ar/general-education-calendar/"     # four cities' next-year start, 24 Aug 2026
+
+[[events]]
+id = "1449-first-day"
+type = "first-day"
+start = 2027-08-22
+title_ar = "بداية العام الدراسي 1449هـ"
+title_en = "First day of school (1449)"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1449-west-first-day"
+type = "first-day"
+start = 2027-08-29
+title_ar = "بداية العام الدراسي 1449هـ"
+title_en = "First day of school (1449)"
+regions = ["west"]
+source = "west-cal"
+
+[[events]]
+id = "1449-end"
+type = "last-day"
+start = 2028-06-22
+title_ar = "نهاية العام الدراسي 1449هـ"
+title_en = "End of school year (1449)"
+regions = ["main"]
+source = "moe"

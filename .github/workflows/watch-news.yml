@@ -1,0 +1,39 @@
+name: Watch for new calendar announcements
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily, 09:00 Riyadh
+  workflow_dispatch:
+
+permissions:
+  contents: write   # monthly keepalive commit
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: gh label create calendar-news --color 0f6b4f --description "Possible new MoE calendar" 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+      - run: python scripts/watch_news.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # GitHub disables scheduled workflows after 60 days without commits; a monthly
+      # one-line log commit keeps the watcher alive. [skip ci] avoids a needless rebuild.
+      - name: Monthly keepalive
+        if: github.event_name == 'schedule'
+        run: |
+          month=$(date -u +%Y-%m)
+          grep -q "^$month" .github/watch-log.txt 2>/dev/null && exit 0
+          echo "$month watcher alive" >> .github/watch-log.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add .github/watch-log.txt
+          git commit -m "chore: watcher keepalive $month [skip ci]"
+          git push

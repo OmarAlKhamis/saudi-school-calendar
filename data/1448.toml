@@ -1,0 +1,212 @@
+# Academic year 1448 AH (2026/2027). Two semesters.
+# "main" = most of the Kingdom. "west" = Makkah, Madinah, Jeddah and Taif, whose education
+# departments run their own calendar a week later.
+
+year = 1448
+gregorian = "2026-2027"
+complete = true
+
+[sources]
+moe = "https://www.argaam.com/ar/article/articledetail/id/1833639"   # MoE four-year calendar, 5 Aug 2025
+west-start = "https://www.okaz.com.sa/local/na/2261534"              # Okaz 16 Aug 2026: four cities' return dates
+extra-days = "https://sites.moe.gov.sa/Qassim/news/news-1136/"       # MoE (Qassim education dept) 27 Aug 2026: the four extra days
+west-cal = "https://rcjy.edu.sa/ar/general-education-calendar/"  # Govt education dept table for the four cities, 24 Aug 2026
+west-extra = "https://www.okaz.com.sa/local/na/2263462"              # Okaz 30 Aug 2026: four cities get one extra day (25 Oct)
+
+[[events]]
+id = "1448-admin-return"
+type = "staff-return"
+start = 2026-08-11
+title_ar = "عودة الهيئة الإدارية والمشرفين التربويين"
+title_en = "Administrative staff return"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1448-west-admin-return"
+type = "staff-return"
+start = 2026-08-16
+title_ar = "عودة الهيئة الإدارية والمشرفين التربويين"
+title_en = "Administrative staff return"
+regions = ["west"]
+source = "west-cal"
+
+[[events]]
+id = "1448-teachers-return"
+type = "staff-return"
+start = 2026-08-16
+title_ar = "عودة المعلمين والمعلمات"
+title_en = "Teachers return"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1448-west-teachers-return"
+type = "staff-return"
+start = 2026-08-23
+title_ar = "عودة المعلمين والمعلمات"
+title_en = "Teachers return"
+regions = ["west"]
+source = "west-start"
+
+[[events]]
+id = "1448-first-day"
+type = "first-day"
+start = 2026-08-23
+title_ar = "بداية العام الدراسي 1448هـ"
+title_en = "First day of school (1448)"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1448-west-first-day"
+type = "first-day"
+start = 2026-08-30
+title_ar = "بداية العام الدراسي 1448هـ"
+title_en = "First day of school (1448)"
+regions = ["west"]
+source = "west-start"
+
+[[events]]
+id = "1448-national-day"
+type = "national-day"
+start = 2026-09-23
+end = 2026-09-26
+title_ar = "إجازة اليوم الوطني"
+title_en = "National Day holiday"
+regions = ["main", "west"]
+source = "moe"
+
+[[events]]
+id = "1448-extra-1"
+type = "long-weekend"
+start = 2026-10-25
+title_ar = "إجازة إضافية"
+title_en = "Extra day off"
+regions = ["main"]
+source = "extra-days"
+
+[[events]]
+id = "1448-west-extra-1"
+type = "long-weekend"
+start = 2026-10-25
+title_ar = "إجازة إضافية"
+title_en = "Extra day off"
+regions = ["west"]
+source = "west-extra"
+
+[[events]]
+id = "1448-autumn"
+type = "break"
+start = 2026-11-20
+end = 2026-11-28
+title_ar = "إجازة الخريف"
+title_en = "Autumn break"
+regions = ["main", "west"]
+source = "moe"
+
+[[events]]
+id = "1448-extra-2"
+type = "long-weekend"
+start = 2026-11-29
+title_ar = "إجازة إضافية"
+title_en = "Extra day off"
+regions = ["main"]
+source = "extra-days"
+
+[[events]]
+id = "1448-extra-3"
+type = "long-weekend"
+start = 2027-01-07
+title_ar = "إجازة إضافية"
+title_en = "Extra day off"
+regions = ["main"]
+source = "extra-days"
+
+[[events]]
+id = "1448-mid-year"
+type = "break"
+start = 2027-01-08
+end = 2027-01-16
+title_ar = "إجازة منتصف العام الدراسي"
+title_en = "Mid-year break"
+regions = ["main", "west"]
+source = "moe"
+
+[[events]]
+id = "1448-semester-2"
+type = "semester-start"
+start = 2027-01-17
+title_ar = "بداية الفصل الدراسي الثاني"
+title_en = "Semester 2 begins"
+regions = ["main", "west"]
+source = "moe"
+
+[[events]]
+id = "1448-founding-day"
+type = "founding-day"
+start = 2027-02-19
+end = 2027-02-22
+title_ar = "إجازة يوم التأسيس"
+title_en = "Founding Day holiday"
+regions = ["main", "west"]
+source = "moe"
+
+[[events]]
+id = "1448-eid-fitr"
+type = "eid"
+start = 2027-02-26
+end = 2027-03-13
+title_ar = "إجازة عيد الفطر"
+title_en = "Eid al-Fitr break"
+regions = ["main", "west"]
+source = "moe"
+
+[[events]]
+id = "1448-extra-4"
+type = "long-weekend"
+start = 2027-04-11
+title_ar = "إجازة إضافية"
+title_en = "Extra day off"
+regions = ["main"]
+source = "extra-days"
+
+[[events]]
+id = "1448-eid-adha"
+type = "eid"
+start = 2027-05-07
+end = 2027-05-22
+title_ar = "إجازة عيد الأضحى"
+title_en = "Eid al-Adha break"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1448-summer"
+type = "summer"
+start = 2027-06-24
+end = 2027-08-21
+title_ar = "إجازة نهاية العام الدراسي"
+title_en = "Summer break"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1448-west-eid-adha"
+type = "eid"
+start = 2027-04-30
+end = 2027-05-22
+title_ar = "إجازة عيد الأضحى"
+title_en = "Eid al-Adha break"
+regions = ["west"]
+source = "west-cal"
+
+[[events]]
+id = "1448-west-summer"
+type = "summer"
+start = 2027-07-01
+end = 2027-08-28
+title_ar = "إجازة نهاية العام الدراسي"
+title_en = "Summer break"
+regions = ["west"]
+source = "west-cal"

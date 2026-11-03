@@ -1,0 +1,133 @@
+# Academic year 1447 AH (2025/2026). Two semesters.
+# Main calendar only: the four cities' 1447 calendar is not in the sources below.
+
+year = 1447
+gregorian = "2025-2026"
+complete = true
+
+[sources]
+moe = "https://www.argaam.com/ar/article/articledetail/id/1833639"  # MoE four-year calendar, 5 Aug 2025
+spa = "https://spa.gov.sa/N2373796"                                  # SPA: Cabinet approves two semesters
+
+[[events]]
+id = "1447-admin-return"
+type = "staff-return"
+start = 2025-08-12
+title_ar = "عودة الهيئة الإدارية والمشرفين التربويين"
+title_en = "Administrative staff return"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-teachers-return"
+type = "staff-return"
+start = 2025-08-17
+title_ar = "عودة المعلمين والمعلمات"
+title_en = "Teachers return"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-first-day"
+type = "first-day"
+start = 2025-08-24
+title_ar = "بداية العام الدراسي 1447هـ"
+title_en = "First day of school (1447)"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-national-day"
+type = "national-day"
+start = 2025-09-23
+title_ar = "إجازة اليوم الوطني"
+title_en = "National Day holiday"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-extra-1"
+type = "long-weekend"
+start = 2025-10-12
+title_ar = "إجازة إضافية"
+title_en = "Extra day off"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-autumn"
+type = "break"
+start = 2025-11-21
+end = 2025-11-29
+title_ar = "إجازة الخريف"
+title_en = "Autumn break"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-extra-2"
+type = "long-weekend"
+start = 2025-12-11
+end = 2025-12-14
+title_ar = "إجازة إضافية"
+title_en = "Extra days off"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-mid-year"
+type = "break"
+start = 2026-01-09
+end = 2026-01-17
+title_ar = "إجازة منتصف العام الدراسي"
+title_en = "Mid-year break"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-semester-2"
+type = "semester-start"
+start = 2026-01-18
+title_ar = "بداية الفصل الدراسي الثاني"
+title_en = "Semester 2 begins"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-founding-day"
+type = "founding-day"
+start = 2026-02-22
+title_ar = "إجازة يوم التأسيس"
+title_en = "Founding Day holiday"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-eid-fitr"
+type = "eid"
+start = 2026-03-06
+end = 2026-03-28
+title_ar = "إجازة عيد الفطر"
+title_en = "Eid al-Fitr break"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-eid-adha"
+type = "eid"
+start = 2026-05-22
+end = 2026-06-01
+title_ar = "إجازة عيد الأضحى"
+title_en = "Eid al-Adha break"
+regions = ["main"]
+source = "moe"
+
+[[events]]
+id = "1447-summer"
+type = "summer"
+start = 2026-06-25
+end = 2026-08-22
+title_ar = "إجازة نهاية العام الدراسي"
+title_en = "Summer break"
+regions = ["main"]
+source = "moe"
