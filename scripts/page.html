@@ -30,6 +30,11 @@
   header h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; margin: 0 0 8px; }
   header p { margin: 0; color: var(--muted); }
   header .en { direction: ltr; text-align: right; font-size: 14px; margin-top: 4px; }
+  .usage { margin-top: 22px; display: inline-block; background: var(--accent-soft); border-radius: 16px;
+           padding: 12px 20px; font-size: 18px; font-weight: 500; }
+  .usage strong { font-size: clamp(34px, 8vw, 48px); line-height: 1; color: var(--accent);
+                  font-variant-numeric: tabular-nums; margin: 0 4px; vertical-align: -4px; }
+  .usage-en { direction: ltr; text-align: right; font-size: 13px; color: var(--muted); font-weight: 400; margin-top: 4px; }
   .region { margin-top: 36px; }
   .region h2 { font-size: 20px; margin: 0; }
   .region h2 small { font-weight: 400; color: var(--muted); font-size: 14px; margin-inline-start: 6px; }
@@ -72,6 +77,10 @@
     <h1>التقويم الدراسي السعودي</h1>
     <p>أضف تقويم وزارة التعليم إلى تقويمك مرة واحدة، وتصلك تواريخ كل عام دراسي جديد تلقائيًا.</p>
     <p class="en">Add the Saudi MoE school calendar once — every new school year arrives on its own.</p>
+    <div class="usage" id="usage" hidden>
+      <span>يستعمله</span> <strong id="usage-n"></strong> <span>من الناس</span>
+      <div class="usage-en">Used by <span id="usage-n-en"></span> people</div>
+    </div>
   </header>
   {{SECTIONS}}
 
@@ -120,6 +129,22 @@
     catch (e) { b.previousElementSibling.select(); }
   }));
   render();
+
+  // Usage counter: each person is counted once when they press any subscribe or copy button.
+  const COUNTER = "{{COUNTER_URL}}";
+  const MIN_SHOWN = 10;  // the number appears once it means something
+  if (COUNTER) {
+    document.querySelectorAll(".feed").forEach(f => f.querySelectorAll(".btn, [data-copy]").forEach(el =>
+      el.addEventListener("click", () => {
+        try { navigator.sendBeacon(COUNTER + "/hit", new Blob([f.dataset.feed], { type: "text/plain" })); } catch (e) {}
+      })));
+    fetch(COUNTER + "/count").then(r => r.json()).then(({ total }) => {
+      if (!(total >= MIN_SHOWN)) return;
+      document.getElementById("usage-n").textContent = total.toLocaleString("ar-SA-u-nu-latn");
+      document.getElementById("usage-n-en").textContent = total.toLocaleString("en-US");
+      document.getElementById("usage").hidden = false;
+    }).catch(() => {});
+  }
 </script>
 </body>
 </html>

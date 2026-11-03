@@ -55,6 +55,8 @@ python scripts/watch_news.py --dry-run
 
 Python 3.11+, standard library only.
 
+**Usage count.** The page shows how many people have pressed a subscribe button, counted once per device by a small Cloudflare Worker in [`counter/`](counter/). It stores only a salted hash, nothing personal. The number appears once it passes 10.
+
 ## License
 
 Code: [MIT](LICENSE). Calendar data in `data/`: public domain ([CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)). Dates come from the Ministry of Education's published calendar; this project is independent and not affiliated with the Ministry.

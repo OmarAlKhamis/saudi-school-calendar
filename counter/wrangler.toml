@@ -1,0 +1,11 @@
+name = "saudi-school-calendar-counter"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+preview_urls = false
+
+# Created with: wrangler kv namespace create COUNTS
+# SALT is a secret: wrangler secret put SALT
+[[kv_namespaces]]
+binding = "COUNTS"
+id = "499adf1a08d549a58cb396c97bb4fe68"

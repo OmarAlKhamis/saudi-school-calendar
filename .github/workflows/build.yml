@@ -24,6 +24,8 @@ jobs:
           python-version: "3.12"
       - run: python scripts/validate.py
       - run: python scripts/build.py
+        env:
+          COUNTER_URL: https://saudi-school-calendar-counter.omar-ab-kh.workers.dev
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

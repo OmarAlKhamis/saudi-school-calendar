@@ -17,6 +17,7 @@ from urllib.parse import quote
 from calendar_data import REGIONS, ROOT, Event, load
 
 SITE_URL = os.environ.get("SITE_URL", "https://omaralkhamis.github.io/saudi-school-calendar").rstrip("/")
+COUNTER_URL = os.environ.get("COUNTER_URL", "").rstrip("/")
 REPO_URL = os.environ.get("REPO_URL", "https://github.com/OmarAlKhamis/saudi-school-calendar")
 OUT = ROOT / "site"
 LANGS = ("ar", "en")
@@ -110,7 +111,7 @@ def card(region: str, lang: str) -> str:
     l = {k: html.escape(v) for k, v in links(region, lang).items()}
     label = "عربي" if lang == "ar" else "English"
     return f"""
-      <div class="feed" data-region="{region}">
+      <div class="feed" data-region="{region}" data-feed="{region}-{lang}">
         <div class="feed-head"><span class="lang">{label}</span></div>
         <div class="buttons">
           <a class="btn primary" href="{l['google']}" target="_blank" rel="noopener">Google</a>
@@ -141,7 +142,8 @@ def page(events: list[Event]) -> str:
     return (template
             .replace("{{SECTIONS}}", sections)
             .replace("{{EVENTS_JSON}}", json.dumps(data, ensure_ascii=False))
-            .replace("{{REPO_URL}}", html.escape(REPO_URL)))
+            .replace("{{REPO_URL}}", html.escape(REPO_URL))
+            .replace("{{COUNTER_URL}}", COUNTER_URL))
 
 
 def main() -> None:
